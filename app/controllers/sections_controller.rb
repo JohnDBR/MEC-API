@@ -1,30 +1,25 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :update, :destroy]
+  skip_before_action :get_current_user, only: [:show, :index]
 
-  # GET /sections
   def index
-    @sections = Section.all
-
-    render json: @sections
+    sections = Section.all
+    render_ok sections
   end
 
-  # GET /sections/1
   def show
-    render json: @section
+    render_ok @section
   end
 
-  # POST /sections
   def create
-    @section = Section.new(section_params)
-
-    if @section.save
-      render json: @section, status: :created, location: @section
+    section = Section.new(section_params)
+    if section.save
+      render json: section, status: :created
     else
-      render json: @section.errors, status: :unprocessable_entity
+      render json: section.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /sections/1
   def update
     if @section.update(section_params)
       render json: @section
@@ -33,19 +28,16 @@ class SectionsController < ApplicationController
     end
   end
 
-  # DELETE /sections/1
   def destroy
     @section.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_section
-      @section = Section.find(params[:id])
-    end
+  def set_section
+    @section = Section.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def section_params
-      params.require(:section).permit(:name, :description)
-    end
+  def section_params
+    params.permit(:name, :description)
+  end
 end
