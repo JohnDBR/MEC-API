@@ -47,7 +47,7 @@ end
 gem 'tzinfo-data'
 
 #Gem to uploads files
-gem 'carrierwave', '~> 1.2.2'
+gem 'carrierwave', '~> 1.3.1'
 #Carrierwave libs needed to work
 #sudo apt-get install imagemagick, libmagic-dev, libmagickwand-dev
 
