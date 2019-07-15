@@ -43,6 +43,11 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data'
+
+#Gem to uploads files
+gem 'carrierwave', '~> 1.2.2'
+#Carrierwave libs needed to work
+#sudo apt-get install imagemagick, libmagic-dev, libmagickwand-dev
+
