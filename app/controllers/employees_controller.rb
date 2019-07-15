@@ -22,14 +22,14 @@ class EmployeesController < ApplicationController
 
   def update
     if @employee.update(employee_params)
-      render json: @employee
+      render_ok @employee
     else
       render json: @employee.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @employee.destroy
+    render_ok @employee.destroy
   end
 
   private

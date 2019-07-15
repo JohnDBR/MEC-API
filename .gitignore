@@ -36,3 +36,8 @@ storage/
 # Developments files while executing on EC2 should be ignored
 nohup.out
 2003
+
+# Carrierwave images
+/public/public/*
+/public/uploads/*
+

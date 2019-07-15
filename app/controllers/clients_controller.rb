@@ -14,7 +14,7 @@ class ClientsController < ApplicationController
   def create
     client = Client.new(client_params)
     if client.save
-      render_ok client, status: :created
+      render_ok client
     else
       render json: client.errors, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class ClientsController < ApplicationController
   end
 
   def destroy
-    @client.destroy
+    render_ok @client.destroy
   end
 
   private

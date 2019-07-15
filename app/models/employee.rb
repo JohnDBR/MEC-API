@@ -1,5 +1,5 @@
 class Employee < ApplicationRecord
-    validates :name, :quote, presence: true, on: :create
+    include AssociatedPicture
 
-    mount_uploader :picture, PictureUploader
+    validates :name, :quote, presence: true, on: :create
 end

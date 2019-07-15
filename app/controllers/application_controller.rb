@@ -28,8 +28,8 @@ class ApplicationController < ActionController::API
       else 
         {
           env: "dev",
-          host: "", 
-          protocol: "https",
+          host: "localhost:3000", 
+          protocol: "http",
           front_url: "https://",
           admin_url: "https://"
         }

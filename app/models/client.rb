@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-    validates :name, :url, presence: true, on: :create
+    include AssociatedPicture
 
-    mount_uploader :picture, PictureUploader
+    validates :name, :url, presence: true, on: :create
 end

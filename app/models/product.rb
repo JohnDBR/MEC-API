@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-    validates :name, :description, presence: true, on: :create
+    include AssociatedPicture
 
-    mount_uploader :picture, PictureUploader
+    validates :name, :description, presence: true, on: :create
 end

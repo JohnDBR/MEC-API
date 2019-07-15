@@ -22,14 +22,14 @@ class SectionsController < ApplicationController
 
   def update
     if @section.update(section_params)
-      render json: @section
+      render_ok @section
     else
       render json: @section.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @section.destroy
+    render_ok @section.destroy
   end
 
   private
