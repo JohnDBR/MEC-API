@@ -2,6 +2,7 @@ module AssociatedFile
   extend ActiveSupport::Concern
 
   included do
+    mount_uploader :picture, PictureUploader
     after_destroy :delete_document
   end
 

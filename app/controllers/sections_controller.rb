@@ -38,6 +38,6 @@ class SectionsController < ApplicationController
   end
 
   def section_params
-    params.permit(:name, :description)
+    params.permit(:name, :description, :picture)
   end
 end

@@ -3,6 +3,7 @@ class CreateClients < ActiveRecord::Migration[5.2]
     create_table :clients do |t|
       t.string :name
       t.string :url
+      t.string :picture
 
       t.timestamps
     end
