@@ -10,7 +10,7 @@
 User.create(
 	username:"admin", 
 	password:"godmode01", 
-	mails:"john-brs@hotmail.com, theleisser1@gmail.com",
+	emails:"john-brs@hotmail.com, theleisser1@gmail.com",
     phones:"3128898938, 3106315237, 3332221111",
     address:"calle 76B # 42F - 122"
 	) #Admin
