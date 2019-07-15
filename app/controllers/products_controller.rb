@@ -14,7 +14,19 @@ class ProductsController < ApplicationController
   def create
     product = Product.new(product_params)
     if product.save
-      render json: product, status: :created
+      if params[:options]
+        errors = {}
+        hash = params[:options].split(/,/)
+        hash.each_with_index do |o,i|
+          product_option = ProductOption.new(name: o.strip, product_id: product.id)
+          unless product_option.save
+            errors["option#{i}"] = product_option.errors
+          end
+        end
+        render json: {errors: errors, product: ProductSerializer.new(product)}, status: :ok
+      else
+        render json: product, status: :created
+      end
     else
       render json: product.errors, status: :unprocessable_entity
     end

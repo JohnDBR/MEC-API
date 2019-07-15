@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :sections, only: [:index, :show, :create, :update, :destroy]
   resources :clients, only: [:index, :show, :create, :update, :destroy]
   resources :employees, only: [:index, :show, :create, :update, :destroy]
+  resources :product_options, only: [:create, :destroy]
+
 end
