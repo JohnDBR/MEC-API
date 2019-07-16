@@ -12,8 +12,8 @@ class ApplicationController < ActionController::API
       if Rails.env.production?
         {
           env: "prod",
-          host: "", 
-          protocol: "https",
+          host: "mec-api.jfarellano.xyz", 
+          protocol: "http",
           front_url: "https://",
           admin_url: "https://"
         }
