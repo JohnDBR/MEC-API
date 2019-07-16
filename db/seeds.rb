@@ -22,3 +22,8 @@ t = Token.create(
 	user_id: 1
 	)
 t.update_attribute(:secret, "cd7f27e1bbfa4ca4959fbb3dbcc6c3fb") #Admin
+
+#Carousel
+# Carousel.create(
+# 	name:"Carrusel Inicial"
+# 	)

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+        function uploadFiles(files) {
+            var xhr = new XMLHttpRequest();
+            var url = "http://localhost:3000/challenges"
+            //"http://localhost:3000/users"
+            
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader('X-Requested-With','XMLHttpRequest');
+            xhr.setRequestHeader("Authorization", "Token token=cd7f27e1bbfa4ca4959fbb3dbcc6c3fb");
+            // xhr.setRequestHeader('Content-Type', 'application/json');
+            // xhr.setRequestHeader('Content-Type', 'multipart/form-data');
+
+            var selectedFiles = []
+            var filesInput = document.getElementById('pctrs');
+            for (var i = 0; i < filesInput.files.length; i++) {
+                selectedFiles.push(filesInput.files[i]);
+            }
+            // var files = selectedFiles.value.split("\\");
+            // var data = JSON.stringify({
+            //     "title": "este es el titulo",
+            //     "description": "esta es una descripcion un poquito mas larga",
+            //     "images": selectedFiles
+            // });
+            var data = new FormData();
+            data.set("title", "este es el titulo");
+            data.set("description", "esta es una descripcion un poquito mas larga"); 
+            data.set("images", selectedFiles);
+            xhr.send(data);
+
+            console.log(data);
+
+            xhr.onreadystatechange = (e) => {
+                console.log(xhr.responseText)
+            }
+
+            // xmlhttp.onreadystatechange = function() {
+            //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            //     xmlDoc = xmlhttp.responseXML;
+            //     console.log(xmlDoc);
+            //     }
+            // };
+        }
+        </script>
+    </head>
+<body>
+
+<div>
+  Select images: <input type="file" id="pctrs" name="imgs" value="v-images" multiple>
+  <button onclick='uploadFiles()'>Submit</button><br>
+</div>
+
+<!-- <form action="http://localhost:3000/challenges" method="post" enctype="multipart/form-data">
+    <p><input type="title" name="title" value="este es el titulo">
+    <p><input type="description" name="description" value="esta es una descripcion un poquito mas larga">
+    <p><input type="file" name="images" multiple>
+    <p><button type="submit">Submit</button>
+  </form> -->
+
+<p>Try selecting more than one file when browsing for files.</p>
+
+<p><strong>Note:</strong> The multiple attribute of the input tag is not supported in Internet Explorer 9 and earlier versions.</p>
+
+</body>
+</html>

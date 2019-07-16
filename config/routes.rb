@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :clients, only: [:index, :show, :create, :update, :destroy]
   resources :employees, only: [:index, :show, :create, :update, :destroy]
   resources :product_options, only: [:create, :destroy]
-
+  resources :carousels, only: [:index, :show, :create, :update, :destroy]
 end

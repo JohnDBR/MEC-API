@@ -23,7 +23,11 @@ class ProductsController < ApplicationController
             errors["option#{i}"] = product_option.errors
           end
         end
-        render json: {errors: errors, product: ProductSerializer.new(product)}, status: :ok
+        if errors.empty?
+          render_ok product
+        else
+          render json: {errors: errors, product: ProductSerializer.new(product)}, status: :unprocessable_entity
+        end
       else
         render json: product, status: :created
       end
