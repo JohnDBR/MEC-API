@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :employees, only: [:index, :show, :create, :update, :destroy]
   resources :product_options, only: [:create, :destroy]
   resources :carousels, only: [:index, :show, :create, :update, :destroy]
+  post 'contact_us', to: 'mails#contact_us'
 end
