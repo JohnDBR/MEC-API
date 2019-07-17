@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     auth = Authentication.new
     auth.start_session(session_params)
     if auth.allowed?
-      render json: LoginSerializer.new(auth.token).as_json, status: :created #We should have a method to render in the application_controller too, like save_and_render...
+      render json: auth.token, status: :created #We should have a method to render in the application_controller too, like save_and_render...
     else
       render json: auth.errors, status: :unauthorized #We should have a method to render in the application_controller too, like save_and_render...  
     end
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     authenticate_with_http_token do |key, options|
       token = Token.find_by(secret: key)
       if token
-        render_ok TokenSerializer.new(token.destroy).as_json #Here we are ussing a method in the application_controller...
+        render_ok token.destroy #Here we are ussing a method in the application_controller...
       end  
     end   
     render json: {errors: "invalid token"}, status: :bad_request unless token
