@@ -94,8 +94,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
 	  :address              => "smtp.gmail.com",
 	  :port                 => 587,
-	  :user_name            => "imaginatuciuda@gmail.com", 
-	  :password             => "godmode01",
+	  :user_name            => "admin@mec.com.co", 
+	  :password             => "Mecltda123",
 	  :authentication       => 'plain',
 	  :enable_starttls_auto => true  }
 
