@@ -5,6 +5,6 @@ class ContactMailer < ApplicationMailer
         @cc = cc
         @description = description
         @email = email
-		mail(from: email, to: "john-brs@hotmail.com", subject: 'MEC - Informacion de Contacto')
+		mail(from: email, to: "comercial@mec.com.co", subject: 'MEC - Informacion de Contacto')
 	end
 end

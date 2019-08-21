@@ -2,9 +2,9 @@
 class ContactMailerPreview < ActionMailer::Preview
     def contact_us
         ContactMailer.contact_us(
-            "John Barbosa", 
-            "1234091655", 
-            "john-brs@hotmail.com",
+            "Adrian perez", 
+            "44442315633", 
+            "comercial@mec.com.co",
             "Esta es la descripcion de alguien que esta intentando contactarse con MEC"
             )
     end
