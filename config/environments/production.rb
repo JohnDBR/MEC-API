@@ -32,7 +32,7 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
-  routes.default_url_options[:host] = 'mec-api.jfarellano.xyz'
+  routes.default_url_options[:host] = 'api.mec.com.co'
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
