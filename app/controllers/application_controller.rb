@@ -13,9 +13,9 @@ class ApplicationController < ActionController::API
         {
           env: "prod",
           host: "api.mec.com.co", 
-          protocol: "http",
-          front_url: "https://",
-          admin_url: "https://"
+          protocol: "https",
+          front_url: "https://www.mec.com.co",
+          admin_url: "https://admin.mec.com.co"
         }
       elsif Rails.env.test?  
         {
